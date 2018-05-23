@@ -55,6 +55,10 @@ server:
 	local-data: "gateway-06.pjodd.	IN AAAA	{{ pjoddnet.subnet6 }}::ff06"
 	local-data: "anycast.pjodd.	IN A	10.46.254.254"
 	local-data: "anycast.pjodd.	IN AAAA	{{ pjoddnet.subnet6 }}::cafe"
+	local-data: "ntp.services.pjodd.	IN A	{{ pjoddnet.subnet }}.1"
+	local-data: "ntp.services.pjodd.	IN AAAA	{{ pjoddnet.subnet6 }}::ff01"
+	local-data: "updates.services.pjodd.	IN A	{{ pjoddnet.subnet }}.1"
+	local-data: "updates.services.pjodd.	IN AAAA	{{ pjoddnet.subnet6 }}::ff01"
 	# Reverse
 	local-data-ptr: "{{ pjoddnet.subnet }}.1	gateway-01.pjodd"
 	local-data-ptr: "{{ pjoddnet.subnet6 }}::ff01	gateway-01.pjodd"
@@ -64,6 +68,10 @@ server:
 	local-data-ptr: "{{ pjoddnet.subnet6 }}::ff06	gateway-06.pjodd"
 	local-data-ptr: "10.46.254.254			anycast.pjodd"
 	local-data-ptr: "{{ pjoddnet.subnet6 }}::cafe	anycast.pjodd"
+	local-data-ptr: "{{ pjoddnet.subnet }}.1	ntp.services.pjodd"
+	local-data-ptr: "{{ pjoddnet.subnet6 }}::ff01	ntp.services.pjodd"
+	local-data-ptr: "{{ pjoddnet.subnet }}.1	updates.services.pjodd"
+	local-data-ptr: "{{ pjoddnet.subnet6 }}::ff01	updates.services.pjodd"
 
 	include: /etc/unbound/adservers
 

@@ -60,7 +60,7 @@ domain (ip ip6) {
 domain ip {
     table nat {
         chain POSTROUTING {
-	    saddr $PJODD_NET daddr !$PJODD_NET outerface {{ ansible_default_ipv4.interface }} SNAT to {{ outernet.inet.subnet }}.{{ gateway_number }};
+	    saddr $PJODD_NET daddr !$PJODD_NET outerface {{ ansible_default_ipv4.interface }} MASQUERADE;
 	}
     }
 }
